@@ -1,10 +1,11 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, ActivityIndicator} from 'react-native';
+import styles from './style';
 
 const Preloader = () => {
   return (
-    <View>
-      <Text>Loading...</Text>
+    <View style={styles.container}>
+      <ActivityIndicator size="large" color="#2F4F4F" />
     </View>
   );
 };

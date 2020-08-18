@@ -1,27 +1,27 @@
 import React from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {getDrivers} from '../../redux/racers-reducer';
 import Placeholder from './Placeholder';
+import {getDrivers} from '../../redux/reducers/drivers-reducer';
 
 const PlaceholderContainer = () => {
   const dispatch = useDispatch();
-  const {currenPage, offset, total} = useSelector((store) => store.racers);
+  const {currenOffset, limit, total} = useSelector((store) => store.drivers);
 
   const onPressDown = () => {
-    const page = currenPage - offset;
-    dispatch(getDrivers(page));
+    const offset = currenOffset - limit;
+    dispatch(getDrivers(offset));
   };
 
   const onPressUp = () => {
-    const page = offset + currenPage;
-    dispatch(getDrivers(page));
+    const offset = limit + currenOffset;
+    dispatch(getDrivers(offset));
   };
 
   return (
     <Placeholder
       total={total}
-      currenPage={currenPage}
-      offset={offset}
+      currenOffset={currenOffset}
+      limit={limit}
       onPressDown={onPressDown}
       onPressUp={onPressUp}
     />

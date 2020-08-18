@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text} from 'react-native';
 import styles from './style';
 
-const HaderSchedule = () => {
+const HeaderSchedule = () => {
   const titles = [
     {title: 'Season'},
     {title: 'Round'},
@@ -24,4 +24,4 @@ const HaderSchedule = () => {
   );
 };
 
-export default HaderSchedule;
+export default HeaderSchedule;

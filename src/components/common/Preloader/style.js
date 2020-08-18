@@ -2,10 +2,10 @@ import {StyleSheet} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
-  },
-  button: {
-    width: '50%',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#D3D3D3',
   },
 });
 export default styles;

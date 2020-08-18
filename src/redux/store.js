@@ -1,10 +1,10 @@
 import {applyMiddleware, combineReducers, createStore} from 'redux';
 import thunk from 'redux-thunk';
-import racers from './racers-reducer';
-import schedule from './schedule-reducer';
+import drivers from './reducers/drivers-reducer';
+import schedule from './reducers/schedule-reducer';
 
 const rootReducer = combineReducers({
-  racers,
+  drivers,
   schedule,
 });
 

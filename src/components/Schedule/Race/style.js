@@ -3,16 +3,17 @@ import {StyleSheet} from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
     borderBottomWidth: 1,
+    paddingVertical: 5,
     paddingHorizontal: 10,
   },
   text: {
-    width: '12%',
+    flex: 1,
+    paddingHorizontal: 3,
   },
   url: {
     color: '#008080',
-    fontWeight: 'bold',
+    paddingHorizontal: 3,
   },
 });
 export default styles;

@@ -3,7 +3,7 @@ import {View, Text} from 'react-native';
 import styles from './style';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
-const HaderTable = ({navigation}) => {
+const HeaderDrawers = ({navigation}) => {
   const titles = [{title: 'Name'}, {title: 'DOB'}];
 
   const onClick = () => {
@@ -24,4 +24,4 @@ const HaderTable = ({navigation}) => {
   );
 };
 
-export default HaderTable;
+export default HeaderDrawers;

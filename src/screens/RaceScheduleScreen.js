@@ -1,15 +1,15 @@
 import React, {useEffect} from 'react';
 import {FlatList, View} from 'react-native';
-import HaderSchedule from './HeaderSchedule/HeaderSchedule';
 import {useDispatch, useSelector} from 'react-redux';
-import {getSchedule} from '../../redux/schedule-reducer';
-import Race from './Race/Race';
-import Preloader from '../common/Preloader/Preloader';
+import Preloader from '../components/common/Preloader/Preloader';
+import Race from '../components/Schedule/Race/Race';
+import HeaderSchedule from '../components/Schedule/HeaderSchedule/HeaderSchedule';
+import {getSchedule} from '../redux/reducers/schedule-reducer';
 
-const Schedule = ({}) => {
+const RaceScheduleScreen = () => {
   const dispatch = useDispatch();
   const {schedule} = useSelector((store) => store.schedule);
-  const {isLoading} = useSelector((store) => store.racers);
+  const {isLoading} = useSelector((store) => store.drivers);
 
   useEffect(() => {
     dispatch(getSchedule());
@@ -23,11 +23,11 @@ const Schedule = ({}) => {
           keyExtractor={(item) => item.raceName}
           data={schedule}
           renderItem={({item}) => <Race race={item}/>}
-          ListHeaderComponent={<HaderSchedule/>}
+          ListHeaderComponent={<HeaderSchedule/>}
         />
       }
     </View>
   );
 };
 
-export default Schedule;
+export default RaceScheduleScreen;

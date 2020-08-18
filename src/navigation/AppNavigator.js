@@ -1,18 +1,18 @@
 import {createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack';
-import DriverTable from '../components/DriverTable/DriverTable';
-import DriverInfoContainer from '../components/DriverInfo/DriverInfoContainer';
-import Schedule from '../components/Schedule/Schedule';
+import DriverInfoScreen from '../screens/DriverInfoScreen';
+import RaceScheduleScreen from '../screens/RaceScheduleScreen';
+import DriversScreen from '../screens/DriwersScreen';
 
 const Main = createStackNavigator({
   Drivers: {
-    screen: DriverTable,
+    screen: DriversScreen,
   },
   DriverInfo: {
-    screen: DriverInfoContainer,
+    screen: DriverInfoScreen,
   },
   Schedule: {
-    screen: Schedule,
+    screen: RaceScheduleScreen,
   },
 });
 

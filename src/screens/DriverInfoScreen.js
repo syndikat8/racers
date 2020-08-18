@@ -1,14 +1,14 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {getDriver} from '../../redux/racers-reducer';
-import DriverInfo from './DriverInfo';
-import Preloader from '../common/Preloader/Preloader';
+import Preloader from '../components/common/Preloader/Preloader';
+import DriverInfo from '../components/DriverInfo/DriverInfo';
+import {getDriver} from '../redux/reducers/drivers-reducer';
 
-const DriverInfoContainer = ({navigation}) => {
+const DriverInfoScreen = ({navigation}) => {
   const driverId = navigation.getParam('driverId');
 
   const dispatch = useDispatch();
-  const {driver, isLoading} = useSelector((store) => store.racers);
+  const {driver, isLoading} = useSelector((store) => store.drivers);
 
   useEffect(() => {
     dispatch(getDriver(driverId));
@@ -24,4 +24,4 @@ const DriverInfoContainer = ({navigation}) => {
   );
 };
 
-export default DriverInfoContainer;
+export default DriverInfoScreen;

@@ -2,12 +2,12 @@ import React from 'react';
 import {Button, View} from 'react-native';
 import styles from './style';
 
-const Placeholder = ({offset, total, currenPage, onPressDown, onPressUp}) => {
+const Placeholder = ({limit, total, currenOffset, onPressDown, onPressUp}) => {
   return (
     <View style={styles.container}>
       <View style={styles.button}>
         <Button
-          disabled={currenPage < offset ? true : false}
+          disabled={currenOffset < limit ? true : false}
           onPress={onPressDown}
           color="#8A2BE2"
           title="DOWN"
@@ -15,7 +15,7 @@ const Placeholder = ({offset, total, currenPage, onPressDown, onPressUp}) => {
       </View>
       <View style={styles.button}>
         <Button
-          disabled={currenPage < total ? false : true}
+          disabled={currenOffset < total ? false : true}
           onPress={onPressUp}
           color="#008B8B"
           title="UP"

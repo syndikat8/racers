@@ -1,15 +1,15 @@
 import React, {useEffect} from 'react';
 import {FlatList, View} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
-import {getDrivers} from '../../redux/racers-reducer';
-import Driver from './Driver/Driver';
-import HeaderTable from './HeaderTable/HeaderTable';
-import PlaceholderContainer from '../Placeholder/PlaceholderContainer';
-import Preloader from '../common/Preloader/Preloader';
+import HeaderDrawers from '../components/Drivers/HeaderDrawers/HeaderDrawers';
+import Driver from '../components/Drivers/Driver/Driver';
+import {getDrivers} from '../redux/reducers/drivers-reducer';
+import PlaceholderContainer from '../components/Placeholder/PlaceholderContainer';
+import Preloader from '../components/common/Preloader/Preloader';
 
-const DriverTable = ({navigation}) => {
+const DriversScreen = ({navigation}) => {
   const dispatch = useDispatch();
-  const {drivers, isLoading} = useSelector((store) => store.racers);
+  const {drivers, isLoading} = useSelector((store) => store.drivers);
 
   useEffect(() => {
     dispatch(getDrivers(0));
@@ -26,7 +26,7 @@ const DriverTable = ({navigation}) => {
             renderItem={({item}) => (
               <Driver navigation={navigation} driver={item}/>
             )}
-            ListHeaderComponent={<HeaderTable navigation={navigation}/>}
+            ListHeaderComponent={<HeaderDrawers navigation={navigation}/>}
           />
           <PlaceholderContainer/>
         </>
@@ -35,4 +35,4 @@ const DriverTable = ({navigation}) => {
   );
 };
 
-export default DriverTable;
+export default DriversScreen;
